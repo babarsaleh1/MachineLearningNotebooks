@@ -25,5 +25,6 @@ RUN echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_notebook_config.py
 # open up port 8887 on the container
 EXPOSE 8887
 
+RUN echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_notebook_config.py
 # start Jupyter notebook server on port 8887 when the container starts
 CMD /bin/bash -c "cd /home/MachineLearningNotebooks && source activate azureml && jupyter notebook --port 8887 --no-browser --ip 0.0.0.0 --allow-root"
